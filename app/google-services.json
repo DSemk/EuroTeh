@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "994427903699",
+    "firebase_url": "https://euroteh-efc31.firebaseio.com",
+    "project_id": "euroteh-efc31",
+    "storage_bucket": "euroteh-efc31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994427903699:android:bdb2cf22adb46939",
+        "android_client_info": {
+          "package_name": "com.example.icoper.euroteh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994427903699-cjoaqkuemdunit4fgdtmc6romrnvehva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.icoper.euroteh",
+            "certificate_hash": "35C884342F10B10EFB5F65A07BB262F4A091408A"
+          }
+        },
+        {
+          "client_id": "994427903699-jnbsh0a92ve1lgm9n0opbjglrv2fnilt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ9IoZxFvY5fZ9NH6iYERz0zfvvvaeO6Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994427903699-jnbsh0a92ve1lgm9n0opbjglrv2fnilt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
