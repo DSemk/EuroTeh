@@ -6,10 +6,99 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+    <RelativeLayout
+        android:id="@+id/ma_container"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:padding="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="Выбарть категорию"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_item_category_btn" />
+
+        <TextView
+            android:text="Название"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="70dp"
+            android:id="@+id/textView" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="53dp"
+            android:id="@+id/ai_itemName_et" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/ai_item_bPriсe_et"
+            android:layout_alignBaseline="@+id/textView2"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignStart="@+id/ai_itemName_et" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/ai_item_sPrice_et"
+            android:layout_alignBaseline="@+id/textView3"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignStart="@+id/ai_item_bPriсe_et" />
+
+        <TextView
+            android:text="Закупка"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/ai_itemName_et"
+            android:layout_alignStart="@+id/textView" />
+
+        <TextView
+            android:text="Продажа"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/ai_item_bPriсe_et"
+            android:layout_alignStart="@+id/textView2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText5"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="31dp" />
+
+        <TextView
+            android:text="Добавить описание"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/ai_item_sPrice_et"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_marginTop="20dp" />
+
+
+    </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>
