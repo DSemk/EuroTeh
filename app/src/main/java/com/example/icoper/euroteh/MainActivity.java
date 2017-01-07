@@ -1,5 +1,6 @@
 package com.example.icoper.euroteh;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,11 +18,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.icoper.euroteh.Engine.StockLogic;
 import com.example.icoper.euroteh.Fragment.AddItemNavFragment;
 import com.example.icoper.euroteh.Fragment.StockNavFragmen;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static Context maContext;
 
     AddItemNavFragment mAddItemNavFragment;
     StockNavFragmen mStockNavFragmen;
@@ -114,5 +118,9 @@ public class MainActivity extends AppCompatActivity
         transaction.replace(R.id.ma_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public static Context getMaContext() {
+        return maContext;
     }
 }

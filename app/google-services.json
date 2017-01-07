@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "994427903699-uuglstt0p6tpjgnjrcg897npqh7vp1on.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.icoper.euroteh",
+            "certificate_hash": "DC1E87DC35DEEBA9507CD3089EC8CCD3F4175D23"
+          }
+        },
+        {
           "client_id": "994427903699-cjoaqkuemdunit4fgdtmc6romrnvehva.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

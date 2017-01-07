@@ -13,9 +13,7 @@
         android:layout_width="292dp"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:id="@+id/category_name_tv"
+        android:id="@+id/list_category_name_tv"
         tools:text="Item name" />
-
-
 
 </LinearLayout>
