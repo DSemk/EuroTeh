@@ -28,7 +28,8 @@ public class StockNavFragmen extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.in_stock_content, container, false);
-        new StockLogic().onCreate(view, MainActivity.getMaContext());
+
+        new StockLogic().onCreate(view, getContext());
 
         return view;
     }

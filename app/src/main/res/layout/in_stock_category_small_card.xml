@@ -25,7 +25,7 @@
         tools:text="3500 грн."
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/small_card_iv"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/itemPrice"
         android:textSize="25dp"/>
 
     <TextView

@@ -25,7 +25,7 @@ import com.example.icoper.euroteh.Fragment.StockNavFragmen;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static Context maContext;
+    private Context maContext;
 
     AddItemNavFragment mAddItemNavFragment;
     StockNavFragmen mStockNavFragmen;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity
         transaction.commit();
     }
 
-    public static Context getMaContext() {
+    public Context getMaContext() {
         return maContext;
     }
 }

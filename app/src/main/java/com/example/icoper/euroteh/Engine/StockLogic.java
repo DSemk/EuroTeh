@@ -1,14 +1,15 @@
 package com.example.icoper.euroteh.Engine;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.icoper.euroteh.BaseData.ItemModelFB;
+import com.example.icoper.euroteh.ModelsFB.StockListFullCardModel;
+
 import com.example.icoper.euroteh.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -19,46 +20,56 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 
 public class StockLogic {
-    public static final String CHILD_NAME = "notebooks";
+    public static final String CHILD_NAME = "";
     private Context mContext;
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
     private DatabaseReference mDatabaseReference;
-    private FirebaseRecyclerAdapter<ItemModelFB, StockListViewHolder> modelFBStockListAdapter;
+    private FirebaseRecyclerAdapter<StockListFullCardModel, StockFullViewHolder> modelFBStockListAdapter;
 
-    public void onCreate(View view, Context context) {
+    public void onCreate(final View view, Context context) {
         this.mContext = context;
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.in_stock_RV);
         mLayoutManager = new LinearLayoutManager(mContext);
         mLayoutManager.setStackFromEnd(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
-        modelFBStockListAdapter = new FirebaseRecyclerAdapter<ItemModelFB, StockListViewHolder>(
-                ItemModelFB.class,
-                R.layout.in_stock_category_list,
-                StockListViewHolder.class,
+
+        modelFBStockListAdapter = new FirebaseRecyclerAdapter<StockListFullCardModel, StockFullViewHolder>(
+                StockListFullCardModel.class,
+                R.layout.in_stock_category_full_card,
+                StockFullViewHolder.class,
                 mDatabaseReference.child(CHILD_NAME)
         ) {
             @Override
-            protected void populateViewHolder(StockListViewHolder viewHolder, ItemModelFB model, int position) {
-                viewHolder.itemName.setText(model.getName());
+            protected void populateViewHolder(StockFullViewHolder viewHolder, StockListFullCardModel model, int position) {
+                viewHolder.itemNameFC.setText("ERROR");
+                viewHolder.itemNameFC.setText(model.getName());
+                viewHolder.gPriceFC.setText(model.getGprice());
+                viewHolder.infoFC.setText(model.getInfo());
+                viewHolder.priceFC.setText(model.getPrice());
             }
         };
 
-        modelFBStockListAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
-            @Override
-            public void onItemRangeInserted(int positionStart, int itemCount) {
-                super.onItemRangeInserted(positionStart, itemCount);
-                int count = modelFBStockListAdapter.getItemCount();
-                int lastVisiblePosition = mLayoutManager.findLastCompletelyVisibleItemPosition();
-                if (lastVisiblePosition == -1 || (positionStart >= (count - 1) && lastVisiblePosition == (positionStart - 1))) {
-                    mRecyclerView.scrollToPosition(positionStart);
-                }
-                mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setAdapter(modelFBStockListAdapter);
-            }
-        });
+        Toast.makeText(context,"Stock Fragment",Toast.LENGTH_SHORT).show();
+
+    }
+
+    public static class StockFullViewHolder extends RecyclerView.ViewHolder {
+        TextView itemNameFC;
+        TextView priceFC;
+        TextView gPriceFC;
+        TextView infoFC;
+
+        public StockFullViewHolder(View view) {
+            super(view);
+            itemNameFC = (TextView) view.findViewById(R.id.full_card_itemName_tv);
+            priceFC = (TextView) view.findViewById(R.id.full_card_itemPrice_tv);
+            gPriceFC = (TextView) view.findViewById(R.id.full_card_itemGPrice_tv);
+            infoFC = (TextView) view.findViewById(R.id.full_card_itemInfo_tv);
+        }
     }
 
     public static class StockListViewHolder extends RecyclerView.ViewHolder {
